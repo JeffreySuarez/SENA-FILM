@@ -1,0 +1,42 @@
+.itemCart {
+    display: flex;
+    border-bottom: 1px solid gray;
+    max-width: 500px;
+    margin: 1rem auto;
+}
+
+p{
+    color: white;
+}
+
+.itemCart img {
+    width: 180px;
+    margin-right: 1rem;
+}
+
+.button-itemCart{
+
+    font-size: 25px;
+    color: red;
+    background-color: #191D24;
+    border: none;
+    padding: 10px;
+    cursor: pointer;
+    transition: all .5s ease-in-out;
+    margin-top: 20px;
+
+}
+
+.button-itemCart:hover{
+    scale:calc(1.5);
+}
+
+.itemCart p{
+    padding: 5px 0px 5px 0px;
+    font-size: 20px; 
+}
+
+.itemCart span{
+    color: yellow;
+    font-family: cursive;
+}
