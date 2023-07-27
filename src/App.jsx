@@ -14,29 +14,18 @@ function App() {
     <div className="App">
       <CartProvider>
         <Routes>
-          <Route path="/" element={<CoderFilm />} />
           <Route path="/CoderFilm" element={<Layout />}>
             <Route index element={<Home />} />
             <Route path="Peliculas" element={<Peliculas />} />
-            <Route
-              path="Peliculas/category/terror/:categoriaID"
-              element={<Peliculas />}
-            />
-            <Route
-              path="Peliculas/category/accion/:categoriaID"
-              element={<Peliculas />}
-            />
-            <Route
-              path="Peliculas/category/marvel/:categoriaID"
-              element={<Peliculas />}
-            />
+            <Route path="Peliculas/category/terror/:categoriaID" element={<Peliculas />} />
+            <Route path="Peliculas/category/accion/:categoriaID" element={<Peliculas />} />
+            <Route path="Peliculas/category/marvel/:categoriaID" element={<Peliculas />} />
+            <Route path="Peliculas/category/infantil/:categoriaID" element={<Peliculas />} />
             <Route path="cart" element={<Cart />} />
-            <Route
-              path="detalle/:detalleID"
-              element={<ItemDetailContainer />}
-            />
+            <Route path="detalle/:detalleID" element={<ItemDetailContainer />} />
             <Route path="checkout" element={<Checkout />} />
           </Route>
+          <Route path="/" element={<CoderFilm />} />
         </Routes>
       </CartProvider>
     </div>

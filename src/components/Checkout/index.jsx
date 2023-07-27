@@ -3,12 +3,7 @@ import { useCartContext } from "../context/CartContext";
 import "./Checkout.css";
 import { Formik } from "formik";
 //importamos firebase
-import {
-  addDoc,
-  collection,
-  getFirestore,
-  updateDoc,
-} from "firebase/firestore";
+import { addDoc, collection, getFirestore, updateDoc } from "firebase/firestore";
 import { Link } from "react-router-dom";
 
 const Checkout = () => {
@@ -98,20 +93,14 @@ const Checkout = () => {
         //validacion para el input de email
         if (!valores.email) {
           errores.email = "por favor ingresa un correo electronico";
-        } else if (
-          !/^[a-zA-Z0-9_.+-]+@[a-zA-Z0-9-]+\.[a-zA-Z0-9-.]+$/.test(
-            valores.email
-          )
-        ) {
-          errores.email =
-            "El email solo puede contener letras, numeros, puntos, guiones y guion bajo.";
+        } else if (!/^[a-zA-Z0-9_.+-]+@[a-zA-Z0-9-]+\.[a-zA-Z0-9-.]+$/.test(valores.email)) {
+          errores.email = "El email solo puede contener letras, numeros, puntos, guiones y guion bajo.";
         }
 
         //validacion para el input de phone
         if (!valores.phone) {
-          errores.phone =
-            "por favor ingresa el numero de contacto con el indicativo del pais seguido del numero de celular";
-        } else if (!/^[+|5|7|-][0-9]{13}$/.test(valores.phone)) {
+          errores.phone = "por favor ingresa el numero de contacto con el indicativo del pais seguido del numero de celular";
+        } else if (!/^[|5|7|][0-9]{11}$/.test(valores.phone)) {
           errores.phone = "El phone solo puede contener numeros.";
         }
 
@@ -125,16 +114,8 @@ const Checkout = () => {
           setFormularioEnviado(false);
         }, 2000);
         console.log(valores);
-      }}
-    >
-      {({
-        handleSubmit,
-        values,
-        handleChange,
-        handleBlur,
-        errors,
-        touched,
-      }) => (
+      }}>
+      {({ handleSubmit, values, handleChange, handleBlur, errors, touched }) => (
         <div className="content-checkout">
           {orderID ? (
             <div className="content-titulo1">
@@ -145,9 +126,7 @@ const Checkout = () => {
             </div>
           ) : (
             <>
-              <h1 className="checkout-title2">
-                Ingresa los datos para generar la orden.
-              </h1>
+              <h1 className="checkout-title2">Ingresa los datos para generar la orden.</h1>
               <div className="content-checkout-formulario">
                 <form onSubmit={handleSubmit} className="content-checkout-form">
                   <div className="form-div">
@@ -162,9 +141,7 @@ const Checkout = () => {
                       onBlur={handleBlur}
                       // onChange={(e) => setName(e.target.value)}
                     />
-                    {touched.name && errors.name && (
-                      <div className="error">{errors.name}</div>
-                    )}
+                    {touched.name && errors.name && <div className="error">{errors.name}</div>}
                   </div>
                   <div className="form-div">
                     <label htmlFor="email">Correo: </label>
@@ -178,9 +155,7 @@ const Checkout = () => {
                       onBlur={handleBlur}
                       // onChange={(e) => setEmail(e.target.value)}
                     />
-                    {touched.email && errors.email && (
-                      <div className="error">{errors.email}</div>
-                    )}
+                    {touched.email && errors.email && <div className="error">{errors.email}</div>}
                   </div>
 
                   <div className="form-div">
@@ -190,14 +165,12 @@ const Checkout = () => {
                       name="phone"
                       type="text"
                       value={values.phone}
-                      placeholder="+57-3127629854"
+                      placeholder="573127629854"
                       onChange={handleChange}
                       onBlur={handleBlur}
                       // onChange={(e) => setNumberCell(e.target.value)}
                     />
-                    {touched.phone && errors.phone && (
-                      <div className="error">{errors.phone}</div>
-                    )}
+                    {touched.phone && errors.phone && <div className="error">{errors.phone}</div>}
                   </div>
 
                   <button
@@ -207,9 +180,7 @@ const Checkout = () => {
                   >
                     Generar Orden
                   </button>
-                  {formularioEnviado && (
-                    <p className="exito">Formulario enviado con exito</p>
-                  )}
+                  {formularioEnviado && <p className="exito">Formulario enviado con exito</p>}
                 </form>
               </div>
             </>

@@ -10,23 +10,15 @@ const index = () => {
           <span className="logo-left">SOBRE</span>
           <span className="logo-right">NOSOTROS</span>
         </h2>
-        <p>
-          APRENDICES SENA; PROGRAMA "ANALISIS Y DESARRROLLO DE SOFTWARE"
-        </p>
+        <p>APRENDICES SENA; PROGRAMA "ANALISIS Y DESARRROLLO DE SOFTWARE"</p>
       </div>
       <hr />
       <div className="footer-mid">
         <h3 className="footer-mid-subtitulo">DESARROLLADORES</h3>
         <div className="footer-lista">
           <ul>
-            <li>Andrés Fernando Días Valencia</li>
             <li>Jeffrey Alexander Suarez Rey</li>
-            <li>Jonathan Cardona Paniagua</li>
-            <li>Belmar Garcés Lopez</li>
-            <li>Jefferson Pupiales</li>
             <li>Alejandra Duque</li>
-            <li>Elian Flórez</li>
-            <li>José Armando Valderrama</li>
           </ul>
         </div>
         <p>APRENDICES SENA</p>
@@ -39,13 +31,10 @@ const index = () => {
         </h1>
         <div className="footer-menu">
           <ul className="footer-list-menu">
-            <NavLink className="list-menu" to="/CoderFilm">
+            {/* <NavLink className="list-menu" to="/CoderFilm">
               Home
-            </NavLink>
-            <NavLink
-              className="list-menu list-menu-menu"
-              to="/CoderFilm/Peliculas"
-            >
+            </NavLink> */}
+            <NavLink className="list-menu list-menu-menu" to="/CoderFilm/Peliculas">
               Peliculas
             </NavLink>
           </ul>
